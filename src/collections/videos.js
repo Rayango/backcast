@@ -1,7 +1,7 @@
 var Videos = Backbone.Collection.extend({
 
   model: Video,
-  data: window.exampleVideoData,
+  // data: window.exampleVideoData,
   
 });
 
