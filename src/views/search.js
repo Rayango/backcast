@@ -8,16 +8,14 @@ var SearchView = Backbone.View.extend({
   },
   
   handleClick: function(e) {
-    this.collection.search(e.target.previousElementSibling.value);
-    console.log(e.target.previousElementSibling.value);          
-    // this.collection.sync();
+    this.collection.search(e.target.previousElementSibling.value); 
+    this.$('.form-control').val('');      
   },
 
   handleKeyPress: function(e) {
     if (e.keyCode === 13) {
       this.collection.search(e.target.value);
-      console.log(e.target.value);
-      // this.collection.sync();
+      this.$('.form-control').val('');
     }
   },
 

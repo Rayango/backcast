@@ -1,8 +1,11 @@
 var Videos = Backbone.Collection.extend({
 
   model: Video,
+  
+  newItems: [],
 
   search: function(query) {
+    // console.log(this);
     Backbone.ajax({
       url: 'https://www.googleapis.com/youtube/v3/search',
       data: {
@@ -15,7 +18,7 @@ var Videos = Backbone.Collection.extend({
         maxResults: 5
       },
       success: function(data) {
-        console.log('we were successful in getting data', data);
+        console.log('search success', data);
         return data.items;
       },
       error: function(error) {
@@ -23,6 +26,5 @@ var Videos = Backbone.Collection.extend({
       } 
     });
   }
-  
 });
 

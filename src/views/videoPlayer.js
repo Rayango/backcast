@@ -6,7 +6,7 @@ var VideoPlayerView = Backbone.View.extend({
   
   initialize: function() {
     // console.log(this.videos);
-    this.listenTo(this.collection, 'select', this.selectItem);
+    this.listenTo(this.collection, 'sync', this.selectItem);
   },
   
   selectItem: function(selectedItem) {
